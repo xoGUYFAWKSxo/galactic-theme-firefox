@@ -1,0 +1,32 @@
+{
+  "manifest_version": 3,
+  "name": "Galactic Theme",
+  "version": "1.3.0",
+  "description": "A detailed rotating spiral galaxy matching Galactic Tab, with gentle forward-moving, twinkling stars.",
+  "icons": {
+    "48": "images/icon.png",
+    "96": "images/icon.png"
+  },
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "spiral-galaxy-drift@galactic-studio.local",
+      "strict_min_version": "115.0"
+    }
+  },
+  "theme": {
+    "images": {
+      "theme_frame": "images/galaxy-header.png"
+    },
+    "colors": {
+      "frame": "#06091b",
+      "tab_background_text": "#e8edff",
+      "toolbar": "#0a0e24",
+      "toolbar_text": "#e8edff",
+      "tab_line": "#8289e8"
+    },
+    "properties": {
+      "color_scheme": "dark",
+      "content_color_scheme": "dark"
+    }
+  }
+}
