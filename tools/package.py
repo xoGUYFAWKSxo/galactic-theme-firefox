@@ -7,7 +7,7 @@ name = "galactic-theme" if "theme" in manifest else "galactic-tab"
 with ZipFile(ROOT / f"{name}.xpi", "w", ZIP_DEFLATED) as package:
     files = [ROOT / "manifest.json"]
     if "theme" in manifest:
-        files += [ROOT / "images/galaxy-header.png", ROOT / "images/icon.png"]
+        files += sorted((ROOT / "images").glob("*.png"))
     else:
         files += list(ROOT.glob("*.js")) + list(ROOT.glob("*.html")) + list(ROOT.glob("*.css"))
         files += [p for p in (ROOT / "assets").rglob("*") if p.is_file()]
