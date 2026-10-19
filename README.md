@@ -4,8 +4,8 @@ Animated Firefox theme with a detailed spiral galaxy and a gently moving, twinkl
 
 ## Features
 - Galaxy near the tab-list arrow, 200 pixels from the right edge.
-- Stars travel on a 90-second cycle; galaxy rotates every 45 seconds.
-- 25 fps animated PNG with matching Galactic Tab artwork.
+- Stars take 90 seconds to fly past; galaxy rotates every 45 seconds.
+- Two 15 fps animated PNG layers (stars and galaxy) with matching Galactic Tab artwork, about 6 MB in total.
 - Dark toolbar and readable tab colors.
 
 ## Load for development
@@ -24,7 +24,9 @@ python tools/build_flight.py
 python tools/package.py
 ```
 
-Generated animation assets are included, so loading does not require a build. Animation rebuilding can take a few minutes. `tools/build_flight.py` is the current generator; `build_theme_art.py` supplies shared dimensions and retains the original artwork workflow.
+Generated animation assets are included, so loading does not require a build. `tools/build_flight.py` writes `images/stars.png` (the transparent `theme_frame`), `images/galaxy.png` (an `additional_backgrounds` layer) and `preview.png`. Pass `stars` or `galaxy` to rebuild one layer.
+
+addons.mozilla.org rejects themes over 7 MB. The star layer loops every 30 seconds (each star has two twins a third of a flight apart) so the theme stays near 6 MB; check the size of `galactic-theme.xpi` after changing frame rates, star counts or dimensions.
 
 ## Related extension
 [Galactic Tab](https://github.com/xoGUYFAWKSxo/galactic-tab-firefox) provides the custom new-tab page and optional browser-strip controls. Enabling those controls overrides this theme until they are switched off.
